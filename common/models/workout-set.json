@@ -1,0 +1,54 @@
+{
+  "name": "workout_set",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "exerciseId": {
+      "mysql": {
+        "columnName": "exercise_id"
+      },
+      "type": "number",
+      "id": true,
+      "required": true,
+      "private": true
+    },
+    "id": {
+      "type": "number",
+      "id": true,
+      "required": false
+    },
+    "reps": {
+      "type": "number",
+      "required": true
+    },
+    "weight": {
+      "type": "number",
+      "required": true
+    },
+    "workoutId": {
+      "mysql": {
+        "columnName": "workout_id"
+      },
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "exercise": {
+      "type": "belongsTo",
+      "model": "exercise",
+      "foreignKey": "exerciseId"
+    },
+    "workout": {
+      "type": "belongsTo",
+      "model": "workout",
+      "foreignKey": "workoutId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

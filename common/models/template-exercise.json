@@ -1,0 +1,79 @@
+{
+  "name": "template_exercise",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "templateId": {
+      "mysql": {
+        "columnName": "template_id"
+      },
+      "type": "number",
+      "required": true,
+      "id": 1
+    },
+    "minSets": {
+      "mysql": {
+        "columnName": "min_sets"
+      },
+      "type": "number",
+      "required": true
+    },
+    "maxSets": {
+      "mysql": {
+        "columnName": "max_sets"
+      },
+      "type": "number",
+      "required": true
+    },
+    "minReps": {
+      "mysql": {
+        "columnName": "min_reps"
+      },
+      "type": "number",
+      "required": true
+    },
+    "maxReps": {
+      "mysql": {
+        "columnName": "max_reps"
+      },
+      "type": "number",
+      "required": true
+    },
+    "rest": {
+      "type": "string",
+      "required": false
+    },
+    "order": {
+      "type": "number",
+      "required": true,
+      "id": 3
+    },
+    "exerciseId": {
+      "mysql": {
+        "columnName": "exercise_id"
+      },
+      "type": "number",
+      "required": true,
+      "id": 2
+    }
+  },
+  "_hidden": ["exerciseId", "templateId"],
+  "validations": [],
+  "relations": {
+    "template": {
+      "type": "belongsTo",
+      "model": "Template",
+      "foreignKey": "templateId"
+    },
+    "exercise": {
+      "type": "belongsTo",
+      "model": "exercise",
+      "foreignKey": "exerciseId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

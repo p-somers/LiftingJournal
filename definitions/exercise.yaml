@@ -1,0 +1,1667 @@
+paths:
+  '/exercises/{id}/workoutSet':
+    get:
+      tags:
+        - exercise
+      summary: Fetches belongsTo relation workoutSet.
+      operationId: exercise.prototype.__get__workoutSet
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout_set'
+      deprecated: false
+  /exercises:
+    post:
+      tags:
+        - exercise
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: exercise.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/exercise'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+    put:
+      tags:
+        - exercise
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: exercise.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/exercise'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+    get:
+      tags:
+        - exercise
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: exercise.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/exercise'
+      deprecated: false
+  '/exercises/{id}/exists':
+    get:
+      tags:
+        - exercise
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'exercise.exists__get_exercises_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/exercises/{id}':
+    head:
+      tags:
+        - exercise
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'exercise.exists__head_exercises_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - exercise
+      summary: Find a model instance by id from the data source.
+      operationId: exercise.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+    delete:
+      tags:
+        - exercise
+      summary: Delete a model instance by id from the data source.
+      operationId: exercise.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - exercise
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: exercise.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/exercise'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+  /exercises/findOne:
+    get:
+      tags:
+        - exercise
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: exercise.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+  /exercises/update:
+    post:
+      tags:
+        - exercise
+      summary: Update instances of the model matched by where from the data source.
+      operationId: exercise.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/exercise'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /exercises/count:
+    get:
+      tags:
+        - exercise
+      summary: Count instances of the model matched by where from the data source.
+      operationId: exercise.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /listitems:
+    post:
+      tags:
+        - listitem
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: listitem.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/listitem'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/listitem'
+      deprecated: false
+    put:
+      tags:
+        - listitem
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: listitem.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/listitem'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/listitem'
+      deprecated: false
+    get:
+      tags:
+        - listitem
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: listitem.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/listitem'
+      deprecated: false
+  '/listitems/{id}/exists':
+    get:
+      tags:
+        - listitem
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'listitem.exists__get_listitems_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/listitems/{id}':
+    head:
+      tags:
+        - listitem
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'listitem.exists__head_listitems_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - listitem
+      summary: Find a model instance by id from the data source.
+      operationId: listitem.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/listitem'
+      deprecated: false
+    delete:
+      tags:
+        - listitem
+      summary: Delete a model instance by id from the data source.
+      operationId: listitem.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - listitem
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: listitem.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/listitem'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/listitem'
+      deprecated: false
+  /listitems/findOne:
+    get:
+      tags:
+        - listitem
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: listitem.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/listitem'
+      deprecated: false
+  /listitems/update:
+    post:
+      tags:
+        - listitem
+      summary: Update instances of the model matched by where from the data source.
+      operationId: listitem.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/listitem'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /listitems/count:
+    get:
+      tags:
+        - listitem
+      summary: Count instances of the model matched by where from the data source.
+      operationId: listitem.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /templates:
+    post:
+      tags:
+        - template
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: template.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/template'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template'
+      deprecated: false
+    put:
+      tags:
+        - template
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: template.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/template'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template'
+      deprecated: false
+    get:
+      tags:
+        - template
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: template.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/template'
+      deprecated: false
+  '/templates/{id}/exists':
+    get:
+      tags:
+        - template
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'template.exists__get_templates_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/templates/{id}':
+    head:
+      tags:
+        - template
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'template.exists__head_templates_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - template
+      summary: Find a model instance by id from the data source.
+      operationId: template.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template'
+      deprecated: false
+    delete:
+      tags:
+        - template
+      summary: Delete a model instance by id from the data source.
+      operationId: template.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - template
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: template.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/template'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template'
+      deprecated: false
+  /templates/findOne:
+    get:
+      tags:
+        - template
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: template.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template'
+      deprecated: false
+  /templates/update:
+    post:
+      tags:
+        - template
+      summary: Update instances of the model matched by where from the data source.
+      operationId: template.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/template'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /templates/count:
+    get:
+      tags:
+        - template
+      summary: Count instances of the model matched by where from the data source.
+      operationId: template.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /template_exercises:
+    post:
+      tags:
+        - template_exercise
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: template_exercise.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/template_exercise'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template_exercise'
+      deprecated: false
+    put:
+      tags:
+        - template_exercise
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: template_exercise.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/template_exercise'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template_exercise'
+      deprecated: false
+    get:
+      tags:
+        - template_exercise
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: template_exercise.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/template_exercise'
+      deprecated: false
+  '/template_exercises/{id}/exists':
+    get:
+      tags:
+        - template_exercise
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'template_exercise.exists__get_template_exercises_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/template_exercises/{id}':
+    head:
+      tags:
+        - template_exercise
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'template_exercise.exists__head_template_exercises_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - template_exercise
+      summary: Find a model instance by id from the data source.
+      operationId: template_exercise.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template_exercise'
+      deprecated: false
+    delete:
+      tags:
+        - template_exercise
+      summary: Delete a model instance by id from the data source.
+      operationId: template_exercise.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - template_exercise
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: template_exercise.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/template_exercise'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template_exercise'
+      deprecated: false
+  /template_exercises/findOne:
+    get:
+      tags:
+        - template_exercise
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: template_exercise.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/template_exercise'
+      deprecated: false
+  /template_exercises/update:
+    post:
+      tags:
+        - template_exercise
+      summary: Update instances of the model matched by where from the data source.
+      operationId: template_exercise.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/template_exercise'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /template_exercises/count:
+    get:
+      tags:
+        - template_exercise
+      summary: Count instances of the model matched by where from the data source.
+      operationId: template_exercise.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /workouts:
+    post:
+      tags:
+        - workout
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: workout.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/workout'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout'
+      deprecated: false
+    put:
+      tags:
+        - workout
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: workout.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/workout'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout'
+      deprecated: false
+    get:
+      tags:
+        - workout
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: workout.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/workout'
+      deprecated: false
+  '/workouts/{id}/exists':
+    get:
+      tags:
+        - workout
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'workout.exists__get_workouts_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/workouts/{id}':
+    head:
+      tags:
+        - workout
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'workout.exists__head_workouts_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - workout
+      summary: Find a model instance by id from the data source.
+      operationId: workout.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout'
+      deprecated: false
+    delete:
+      tags:
+        - workout
+      summary: Delete a model instance by id from the data source.
+      operationId: workout.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - workout
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: workout.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/workout'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout'
+      deprecated: false
+  /workouts/findOne:
+    get:
+      tags:
+        - workout
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: workout.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout'
+      deprecated: false
+  /workouts/update:
+    post:
+      tags:
+        - workout
+      summary: Update instances of the model matched by where from the data source.
+      operationId: workout.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/workout'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /workouts/count:
+    get:
+      tags:
+        - workout
+      summary: Count instances of the model matched by where from the data source.
+      operationId: workout.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/workout_sets/{id}/exercises':
+    get:
+      tags:
+        - workout_set
+      summary: Fetches hasOne relation exercises.
+      operationId: workout_set.prototype.__get__exercises
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+    post:
+      tags:
+        - workout_set
+      summary: Creates a new instance in exercises of this model.
+      operationId: workout_set.prototype.__create__exercises
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/exercise'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+    put:
+      tags:
+        - workout_set
+      summary: Update exercises of this model.
+      operationId: workout_set.prototype.__update__exercises
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/exercise'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/exercise'
+      deprecated: false
+    delete:
+      tags:
+        - workout_set
+      summary: Deletes exercises of this model.
+      operationId: workout_set.prototype.__destroy__exercises
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  /workout_sets:
+    post:
+      tags:
+        - workout_set
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: workout_set.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/workout_set'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout_set'
+      deprecated: false
+    put:
+      tags:
+        - workout_set
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: workout_set.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/workout_set'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout_set'
+      deprecated: false
+    get:
+      tags:
+        - workout_set
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: workout_set.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/workout_set'
+      deprecated: false
+  '/workout_sets/{id}/exists':
+    get:
+      tags:
+        - workout_set
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'workout_set.exists__get_workout_sets_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/workout_sets/{id}':
+    head:
+      tags:
+        - workout_set
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'workout_set.exists__head_workout_sets_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - workout_set
+      summary: Find a model instance by id from the data source.
+      operationId: workout_set.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout_set'
+      deprecated: false
+    delete:
+      tags:
+        - workout_set
+      summary: Delete a model instance by id from the data source.
+      operationId: workout_set.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - workout_set
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: workout_set.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/workout_set'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout_set'
+      deprecated: false
+  /workout_sets/findOne:
+    get:
+      tags:
+        - workout_set
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: workout_set.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/workout_set'
+      deprecated: false
+  /workout_sets/update:
+    post:
+      tags:
+        - workout_set
+      summary: Update instances of the model matched by where from the data source.
+      operationId: workout_set.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/workout_set'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /workout_sets/count:
+    get:
+      tags:
+        - workout_set
+      summary: Count instances of the model matched by where from the data source.
+      operationId: workout_set.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  workout_set:
+    properties:
+      id:
+        type: number
+        format: double
+      reps:
+        type: number
+        format: double
+      weight:
+        type: number
+        format: double
+    required:
+      - id
+      - reps
+      - weight
+    additionalProperties: false
+  exercise:
+    properties:
+      id:
+        type: number
+        format: double
+      name:
+        type: string
+      exercise_id:
+        type: number
+        format: double
+    required:
+      - id
+      - name
+    additionalProperties: false
+  listitem:
+    properties:
+      id:
+        type: number
+        format: double
+      listid:
+        type: number
+        format: double
+      value:
+        type: string
+    required:
+      - value
+    additionalProperties: false
+  template:
+    properties:
+      id:
+        type: number
+        format: double
+      name:
+        type: string
+    required:
+      - name
+    additionalProperties: false
+  template_exercise:
+    properties:
+      templateId:
+        type: number
+        format: double
+      minSets:
+        type: number
+        format: double
+      maxSets:
+        type: number
+        format: double
+      minReps:
+        type: number
+        format: double
+      maxReps:
+        type: number
+        format: double
+      rest:
+        type: string
+      order:
+        type: number
+        format: double
+      exerciseId:
+        type: number
+        format: double
+      id:
+        type: number
+        format: double
+    required:
+      - templateId
+      - minSets
+      - maxSets
+      - minReps
+      - maxReps
+      - order
+      - exerciseId
+    additionalProperties: false
+  workout:
+    properties:
+      id:
+        type: number
+        format: double
+      date:
+        type: string
+        format: date
+      template:
+        type: number
+        format: double
+    required:
+      - date
+    additionalProperties: false
+swagger: '2.0'
+info:
+  x-ibm-name: exercise
+  version: 1.0.0
+  title: exercise
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)

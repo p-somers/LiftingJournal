@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "exercise": {
+    "dataSource": "db",
+    "public": true
+  },
+  "listitem": {
+    "dataSource": "db",
+    "public": true
+  },
+  "template": {
+    "dataSource": "db",
+    "public": true
+  },
+  "template_exercise": {
+    "dataSource": "db",
+    "public": true
+  },
+  "workout": {
+    "dataSource": "db",
+    "public": true
+  },
+  "workout_set": {
+    "dataSource": "db",
+    "public": true
+  }
+}
