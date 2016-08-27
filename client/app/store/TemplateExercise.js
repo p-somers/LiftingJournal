@@ -16,11 +16,6 @@ Ext.define('Exercise.store.TemplateExercise', {
         pageParam: false,
         startParam: false,
         limitParam: false
-    },
-    listeners: {
-        load: function( _this, records, successful, operation, eOpts ){
-            console.log("template_exercise records loaded successfully:", successful);
-        }
     }
   }
 });

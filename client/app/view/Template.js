@@ -9,15 +9,9 @@ Ext.define('Exercise.view.Template', {
     'Ext.data.Store'
   ],
   config: {
-    layout: 'vbox',
-    items: [
-      {
-        xtype: 'toolbar',
-        docked: 'top',
-        id: 'templateToolbar',
+    title: null,
 
-        title: 'Finding location...'
-      },
+    items: [
       {
         xtype: "list",
         height: '100%',
@@ -31,14 +25,15 @@ Ext.define('Exercise.view.Template', {
         ].join(''))
       }
     ],
-    listeners: {
-      updatedata: function(me, data) {
-        if (Object.keys(data).length > 0) {
-          me.down('#templateToolbar').setTitle("test");
-          var templateExerciseStore = Ext.getStore("TemplateExercise");
-          templateExerciseStore.filter("templateId", data.getId());
-        }
-      }
+
+    template: null
+  },
+
+  updateTemplate: function(newTemplate) {
+    if (newTemplate) {
+      var templateExerciseStore = Ext.getStore("TemplateExercise");
+      templateExerciseStore.filter("templateId", newTemplate.getId());
+      this.setTitle(newTemplate.get('name'));
     }
   }
 });

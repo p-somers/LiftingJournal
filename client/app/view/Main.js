@@ -56,6 +56,7 @@ Ext.define('Exercise.view.Main', {
     items: [
       {
         title: 'Test',
+        itemId: 'mainPanel',
         layout: {
           type: 'vbox',
           align: 'middle',
