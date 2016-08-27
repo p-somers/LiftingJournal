@@ -1,7 +1,7 @@
 /**
  * Created by psomers on 8/13/16.
  */
-Ext.define('Exercise.model.ExerciseModel', {
+Ext.define('Exercise.model.Exercise', {
   extend: 'Ext.data.Model',
   config: {
     fields: [

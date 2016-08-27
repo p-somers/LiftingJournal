@@ -18,19 +18,24 @@ Ext.application({
     ],
 
     views: [
-        'Main'
+        'Main',
+        'Templates'
     ],
 
     models: [
-        'TemplateModel',
-        'ExerciseModel',
-        'TemplateExerciseModel'
+        'Exercise.model.Template',
+        'Exercise.model.Exercise',
+        'Exercise.model.TemplateExercise'
+    ],
+
+    controllers: [
+        'Main'
     ],
 
     stores: [
-        'TemplateStore',
-        'TemplateExerciseStore',
-        'ExerciseStore'
+        'Template',
+        'TemplateExercise',
+        'Exercise'
     ],
 
     icon: {
@@ -56,6 +61,15 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
+      /*var templateStore = Ext.getStore('templateStore');
+      var template = templateStore.getById('2');
+      var v = Ext.create('Exercise.view.Template',
+        {
+          data: template
+        }
+        );
+      //v.setData(template);
+      Ext.Viewport.add(v);*/
         Ext.Viewport.add(Ext.create('Exercise.view.Main'));
     },
 

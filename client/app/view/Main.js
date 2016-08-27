@@ -1,41 +1,87 @@
 Ext.define('Exercise.view.Main', {
-    extend: 'Ext.tab.Panel',
-    xtype: 'main',
-    requires: [
-        'Ext.dataview.List',
-        'Ext.TitleBar'
-    ],
-    config: {
-        tabBarPosition: 'bottom',
+  extend: 'Ext.navigation.View',
+  xtype: 'mainview',
 
+  requires: [
+  ],
+
+  config: {
+    autoDestroy: false,
+
+    navigationBar: {
+      splitNavigation: false,
+      items: [
+        {
+          xtype: 'button',
+          id: 'saveButton',
+          text: 'Save',
+          ui: 'sencha',
+          align: 'right',
+          hidden: true,
+          hideAnimation: Ext.os.is.Android ? false : {
+            type: 'fadeOut',
+            duration: 200
+          },
+          showAnimation: Ext.os.is.Android ? false : {
+            type: 'fadeIn',
+            duration: 200
+          }
+        }
+      ]
+    },
+
+    platformConfig: {
+      blackberry: {
+        navigationBar: {
+          splitNavigation: {
+            xtype: 'toolbar',
+            items: [{
+              docked: 'right',
+              xtype: 'button',
+              iconCls: 'pencil',
+              id: 'editButton',
+              hidden: true
+            },{
+              docked: 'right',
+              xtype: 'button',
+              iconCls: 'check',
+              id: 'saveButton',
+              hidden: true
+            }]
+          }
+        }
+      }
+    },
+
+    items: [
+      {
+        title: 'Test',
+        layout: {
+          type: 'vbox',
+          align: 'middle',
+          pack: 'center'
+        },
+        width: '100%',
+        defaults: {
+          width: '60%',
+          height: '40%'
+        },
         items: [
-            {
-                title: 'Welcome',
-                iconCls: 'home',
-
-                styleHtmlContent: true,
-                scrollable: true,
-
-                items: [
-                    {
-                        docked: 'top',
-                        xtype: 'titlebar',
-                        title: 'Weightlifting Journal'
-                    },
-                    {
-                        xtype: 'list',
-                        store: 'TemplateExerciseStore',
-                        height: '200px',
-                        itemTpl: [
-                          '{exercise.name}: ',
-                          '{minSets}<tpl if="minSets !== maxSets"> - {maxSets}</tpl> x ',
-                          '{minReps}<tpl if="minReps !== maxReps"> - {maxReps}</tpl>'
-                          ].join(''),
-                        //itemTpl: '{name} |<tpl for="exercises">{exerciseName}</tpl>|',
-                        style: 'color:black'
-                    }
-                ]
-            }
+          {
+            xtype: 'button',
+            text: 'Enter new workout',
+            itemId: 'newWorkoutButton'
+          },
+          {
+            height: '20px'
+          },
+          {
+            xtype: 'button',
+            text: 'View data',
+            itemId: 'viewDataButton'
+          }
         ]
-    }
+      }
+    ]
+  }
 });

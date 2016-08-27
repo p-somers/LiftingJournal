@@ -1,8 +1,11 @@
 /**
  * Created by psomers on 8/13/16.
  */
-Ext.define('Exercise.model.TemplateExerciseModel', {
+Ext.define('Exercise.model.TemplateExercise', {
   extend: 'Ext.data.Model',
+  requires: [
+    'Exercise.model.Exercise'
+  ],
   config: {
     fields: [
       {name: 'templateId', type: 'int'},
@@ -17,9 +20,10 @@ Ext.define('Exercise.model.TemplateExerciseModel', {
     ],
     hasOne: [
       {
-        model: 'Exercise.model.ExerciseModel',
+        model: 'Exercise.model.Exercise',
         name: 'exercise',
-        associationKey: 'exercise'
+        associationKey: 'exercise',
+        foreignKey: 'exerciseId'
       }
     ]
   }
