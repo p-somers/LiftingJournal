@@ -25,12 +25,13 @@ Ext.application({
   models: [
     'Exercise.model.Template',
     'Exercise.model.Exercise',
-    'Exercise.model.TemplateExercise'
+    'Exercise.model.TemplateExercise',
+    'Exercise.model.Workout',
+    'Exercise.model.WorkoutSet'
   ],
 
   controllers: [
-    'Main',
-    'Template'
+    'Main'
   ],
 
   stores: [
